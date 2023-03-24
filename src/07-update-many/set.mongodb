@@ -1,0 +1,40 @@
+use("sample_training")
+
+// // $set
+// db.zips.find({ city: "CLEVELAND"}).count()
+// db.zips.updateMany(
+//   // query
+//   { city: "CLEVELAND" },
+//   // update => por medio de operators
+//   {
+//     $set: {
+//       myAttr: "Hola"
+//     }
+//   }
+// )
+
+// // $rename
+// db.zips.find({ city: "CLEVELAND"}).count()
+// db.zips.updateMany(
+//   // query
+//   { city: "CLEVELAND" },
+//   // update => por medio de operators
+//   {
+//     $rename: {
+//       myAttr: "my_data"
+//     }
+//   }
+// )
+
+// $unset
+db.zips.find({ city: "CLEVELAND"}).count()
+db.zips.updateMany(
+  // query
+  { city: "CLEVELAND" },
+  // update => por medio de operators
+  {
+    $unset: {
+      my_data: ""
+    }
+  }
+)

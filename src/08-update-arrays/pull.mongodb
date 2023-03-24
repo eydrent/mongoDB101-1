@@ -1,0 +1,20 @@
+use("platzi_store")
+// remove 1 element of the aray
+db.inventory.updateMany(
+  {},{
+    $pull: {
+      tags: "book"
+    }
+  }
+)
+
+// remove more than one element of the aray
+db.inventory.updateMany(
+  {},{
+    $pull: {
+      tags: {
+        $in: ['appliance', 'school']
+      }
+    }
+  }
+)
