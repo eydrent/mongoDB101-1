@@ -1,0 +1,17 @@
+use("platzi_store")
+
+// db.monthlyBudget.find({ spent: { $gte: 100 }})
+
+// Expresive operator
+// db.monthlyBudget.find({
+//   $expr: {
+//     $gte: [ "$spent", 100 ]
+//   }
+// })
+
+// Where the spent exceeds the budget
+db.monthlyBudget.find({
+  $expr: {
+    $gte: [ "$spent", "$budget" ]
+  }
+})
