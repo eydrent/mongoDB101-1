@@ -1,0 +1,16 @@
+use("platzi_store")
+
+// db.inventory.find({ "item.description": "Single line description."})
+// db.inventory.find({ "item.description": { $regex: /line/ } })
+
+// No key sensitive
+db.inventory.find({ "item.description": { $regex: /LINE/i } })
+
+// That finish end ($) and no key sensitive
+db.inventory.find({ "item.description": { $regex: /LINE$/i } })
+
+// That begin with (^) and no key sensitive
+db.inventory.find({ "item.description": { $regex: /^Single/i } })
+
+// Line break in text -> using the (m) -> multiline
+db.inventory.find({ "item.description": { $regex: /^s/im } })
