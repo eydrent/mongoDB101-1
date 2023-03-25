@@ -1,0 +1,39 @@
+use("platzi_store");
+
+// $in , values & arrays
+// Values
+// db.inventory.find({ qty: { $in: [20, 25] } });
+// Arrays
+// db.inventory.find({ tags: { $in: ["book", "electronics"] } });
+
+
+// $nin , values & arrays
+// $nin -> that there are no that elements
+// Values
+// db.inventory.find({ qty: { $nin: [20, 25] } });
+// Arrays
+// db.inventory.find({ tags: { $nin: ["book", "electronics"] } });
+
+
+// Arrays
+// We have to search in the same order is on the database
+// db.inventory.find({ tags: "book" });
+// db.inventory.find({ tags: ["school", "book"] });
+
+// Arrays $all
+// Thats not matter order it finds
+db.inventory.find({ tags: { $all: ["book", "school"] } });
+
+// Arrays $size
+// 2 elements in the array
+db.inventory.find({ tags: { $size: 2 } });
+
+// Arrays $elemMatch
+db.survey.find({ results: { $elemMatch: { product: "xyz"} } });
+db.survey.find({
+  results: {
+    $elemMatch: {
+      product: "xyz", score: { $gte: 7 }
+    }
+  }
+});

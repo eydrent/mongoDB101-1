@@ -1,0 +1,4 @@
+// Object Array
+use("platzi_store");
+
+db.survey.find();
