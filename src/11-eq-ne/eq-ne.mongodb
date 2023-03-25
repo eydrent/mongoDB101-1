@@ -1,0 +1,11 @@
+use("platzi_store")
+
+// Using $eq
+// Viene de forma implicita
+// db.inventory.find({ qty: 20 })
+// De eforma explicita
+db.inventory.find({ qty: { $eq: 20} })
+db.inventory.find({ "item.name": 'ab' })
+
+// Using $ne
+db.inventory.find({ qty: { $ne: 20} })
